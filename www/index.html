@@ -24,7 +24,7 @@
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
     <title>Hello World</title>
   </head>
   <body>
@@ -33,38 +33,7 @@
       <em>Enter your DTC code and find out what's wrong with your car.</em>
     </header>
 
-    <div class="search-code centre-on-page">
-      <h2>Trouble Code</h2>
-
-      <form>
-        <input type="text" maxlength="1" size="1" id="code_0">
-        <input type="text" maxlength="1" size="1" id="code_1">
-        <input type="text" maxlength="1" size="1" id="code_2">
-        <input type="text" maxlength="1" size="1" id="code_3">
-        <input type="text" maxlength="1" size="1" id="code_4">
-      </form>
-
-      <div class="alert">Enter the Diagnostic Trouble Code to filter the results.</div>
-    </div>
-
-    <ul class="error-results centre-on-page">
-      <li id="code_P0030_0">
-        <strong>P0030</strong>
-        <span class="make">[Generic]</span>
-        <span class="error">Catalyst System Low Efficiency</span>
-      </li>
-      <li id="code_P0030_1">
-        <strong>P0030</strong>
-        <span class="make">[Generic]</span>
-        <span class="error">Catalyst System Low Efficiency</span>
-      </li>
-      <li id="code_P0030_2">
-        <strong>P0030</strong>
-        <span class="make">[Generic]</span>
-        <span class="error">Catalyst System Low Efficiency</span>
-      </li>
-    </ul>
-
+    <div id="app"></div>
     <script type="text/javascript" data-main="js/app" src="js/lib/require.js"></script>
 
   </body>
