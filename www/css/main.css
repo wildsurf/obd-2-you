@@ -48,7 +48,7 @@ header em {
     padding-top: 10px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .no-results {
     font-family: 'Pathway Gothic One', sans-serif;
 }
 
@@ -132,4 +132,11 @@ h1 {
 .error-results .make {
     color: #439fe0;
     text-transform: uppercase;
+}
+
+.error-results .no-results {
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
 }
