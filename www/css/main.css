@@ -34,7 +34,7 @@ body {
 }
 
 header {
-    background: #439fe0; /* Old browsers */
+    background: #439fe0;
     color: white;
     padding: 20px;
     text-align: center;
@@ -90,6 +90,7 @@ h1 {
     margin-bottom: 3px;
     padding: 5px;
     text-align: center;
+    text-transform: uppercase;
     font-size: 23px;
 }
 
@@ -117,4 +118,9 @@ h1 {
 
 .error-results li:hover {
     background-color: rgb(223, 218, 218);
+}
+
+.error-results .make {
+    color: #439fe0;
+    text-transform: uppercase;
 }

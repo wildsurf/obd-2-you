@@ -2,7 +2,7 @@
   <% _.each(results, function(result) { %>
     <li id="c_<%= result.code %>">
       <strong><%= result.code %></strong>
-      <span class="make"><%= result.make %></span>
+      <span class="make">[<%= result.make %>]</span>
       <span class="error"><%= result.error %></span>
     </li>
   <% }); %>

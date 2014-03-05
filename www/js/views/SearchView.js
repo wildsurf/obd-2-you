@@ -15,6 +15,7 @@ define(
 
     initialize: function () {
         this.currentHint = "Enter the Diagnostic Trouble Code to filter the results.";
+        this.code = ["","","","",""];
         this.inputs = [
           { codeId: 0, hint: hints[0] },
           { codeId: 1, hint: hints[1] },
