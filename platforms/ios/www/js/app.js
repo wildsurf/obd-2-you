@@ -11,8 +11,7 @@ require.config({
 
 // Start the main app logic.
 require(["jquery","adapter", "backbone", "views/HomeView"], function($, Adapter, Backbone, HomeView) {
-    Adapter.findByCode("P0440").done(function(result) {
-      console.log(result);
-    });
-    $("#app").html(new HomeView().el);
+
+  var homeView = new HomeView({el: "#app"});
+  homeView.render();
 });

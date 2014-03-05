@@ -1,9 +1,9 @@
-<h2>Trouble Code</h2>
+<div class="alert"><%= currentHint %></div>
+
+<input type="button" value="Clear Code" id="clear-filter">
 
 <form>
   <% _.each(inputs, function(input) { %>
-    <input type="text" maxlength="1" size="1" id="c_<%= input.codeId %>">
+    <input class="code-char" type="<%= input.type %>" maxlength="1" size="1" id="c_<%= input.codeId %>">
   <% }); %>
 </form>
-
-<div class="alert"><%= currentHint %></div>

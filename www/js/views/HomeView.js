@@ -28,30 +28,19 @@ define(
     },
 
     events: {
-      "keyup .code-char": "search"
+      "keyup .code-char": "search",
+      "click #clear-filter": "clearFilter"
+    },
+
+    clearFilter: function() {
+      this.initialize();
     },
 
     search: function() {
-      console.log('searching');
       this.code = getCompleteCode();
       this.resultsView = new ResultsView({ el: "#results-view", code: this.code });
     }
 
-    // events: {
-    //     "keyup .search-key":    "search",
-    //     "keypress .search-key": "onkeypress"
-    // },
-
-    // search: function (event) {
-    //     var key = $('.search-key').val();
-    //     this.employeeList.fetch({reset: true, data: {name: key}});
-    // },
-
-    // onkeypress: function (event) {
-    //     if (event.keyCode === 13) { // enter key pressed
-    //         event.preventDefault();
-    //     }
-    // }
 
   });
 

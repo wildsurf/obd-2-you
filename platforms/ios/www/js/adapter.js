@@ -7,8 +7,18 @@ define(["jquery"], function($) {
   pub.findByCode = function(code) {
       var deferred = $.Deferred(),
         results = troubleCodes.filter(function(element) {
-          return element.code.toLowerCase().indexOf(code.toLowerCase()) > -1;
+          var codeArr = element.code.split(''), i, match = true;
+          for (i=0; i<codeArr.length; i++) {
+            if (!(codeArr[i].toLowerCase() === code[i].toLowerCase() || code[i] === "")) {
+              match = false;
+              break;
+            }
+          }
+          return match;
         });
+      results.map(function(element) {
+        element.make = makes[element.makeId].name;
+      });
       deferred.resolve(results);
       return deferred.promise();
   };

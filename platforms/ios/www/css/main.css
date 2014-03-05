@@ -34,7 +34,7 @@ body {
 }
 
 header {
-    background: #439fe0; /* Old browsers */
+    background: #439fe0;
     color: white;
     padding: 20px;
     text-align: center;
@@ -75,12 +75,6 @@ h1 {
     text-align: center;
 }
 
-.search-code h2 {
-    color: white;
-    margin-top: 0;
-    text-shadow: 1px 1px 1px black;
-}
-
 .search-code input {
     border: none;
     font-family: 'Pathway Gothic One', sans-serif;
@@ -90,11 +84,27 @@ h1 {
     margin-bottom: 3px;
     padding: 5px;
     text-align: center;
+    text-transform: uppercase;
     font-size: 23px;
 }
 
+.search-code input[type=button] {
+    border: none;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 1px black;
+    width: auto;
+}
+
+.search-code input[type=button]:hover,
+.search-code input[type=button]:focus,
+.search-code input[type=button]:active {
+    background-color: #439fe0;
+}
+
 .alert {
-    margin-top: 20px;
+    margin-bottom: 10px;
     background-color: whitesmoke;
     padding: 20px;
 }
@@ -117,4 +127,9 @@ h1 {
 
 .error-results li:hover {
     background-color: rgb(223, 218, 218);
+}
+
+.error-results .make {
+    color: #439fe0;
+    text-transform: uppercase;
 }

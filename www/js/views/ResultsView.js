@@ -23,12 +23,6 @@ define(
       return this;
     }
 
-    // onkeypress: function (event) {
-    //     if (event.keyCode === 13) { // enter key pressed
-    //         event.preventDefault();
-    //     }
-    // }
-
   });
 
 });

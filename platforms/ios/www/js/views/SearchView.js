@@ -15,12 +15,13 @@ define(
 
     initialize: function () {
         this.currentHint = "Enter the Diagnostic Trouble Code to filter the results.";
+        this.code = ["","","","",""];
         this.inputs = [
-          { codeId: 0, hint: hints[0] },
-          { codeId: 1, hint: hints[1] },
-          { codeId: 2, hint: hints[2] },
-          { codeId: 3, hint: hints[2] },
-          { codeId: 4, hint: hints[2] }
+          { codeId: 0, hint: hints[0], type: "text" },
+          { codeId: 1, hint: hints[1], type: "tel" },
+          { codeId: 2, hint: hints[2], type: "tel" },
+          { codeId: 3, hint: hints[2], type: "tel" },
+          { codeId: 4, hint: hints[2], type: "tel" }
         ];
         this.render();
     },
@@ -30,24 +31,9 @@ define(
           currentHint: this.currentHint,
           inputs: this.inputs
         }));
+        this.$el.find(".code-char:first").focus();
         return this;
     }
-
-    // events: {
-    //     "keyup .search-key":    "search",
-    //     "keypress .search-key": "onkeypress"
-    // },
-
-    // search: function (event) {
-    //     var key = $('.search-key').val();
-    //     this.employeeList.fetch({reset: true, data: {name: key}});
-    // },
-
-    // onkeypress: function (event) {
-    //     if (event.keyCode === 13) { // enter key pressed
-    //         event.preventDefault();
-    //     }
-    // }
 
   });
 
