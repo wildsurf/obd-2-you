@@ -1,5 +1,5 @@
 {
   "undef": true,
   "unused": false,
-  "globals": { "$": false }
+  "globals": { "$": false, "require": false, "requirejs": false }
 }
