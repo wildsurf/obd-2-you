@@ -10,7 +10,7 @@ require.config({
 });
 
 // Start the main app logic.
-require(["jquery","adapter", "backbone", "views/HomeView"], function($, Adapter, Backbone, HomeView) {
+require(["jquery","backbone", "views/HomeView"], function($, Backbone, HomeView) {
 
   var homeView = new HomeView({el: "#app"});
   homeView.render();

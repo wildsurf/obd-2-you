@@ -1,25 +1,27 @@
 "use strict";
 
 define(
-  ["backbone", "underscore", "jquery", "text!views/tpl/home/Results.html", "../adapter"],
-  function(Backbone, _, $, Result, Adapter) {
+  ["backbone", "underscore", "jquery", "text!views/tpl/home/Results.html", "../collections/TroubleCodeCollection"],
+  function(Backbone, _, $, Result, TroubleCodeCollection) {
 
   var template = _.template(Result);
 
   return Backbone.View.extend({
 
     initialize: function (options) {
+      var that = this;
       this.code = options.code;
-      this.render();
+      this.troubleCodes = new TroubleCodeCollection();
+      this.troubleCodes.fetch({dataType: "jsonp", success: function() {
+        that.render();
+      }});
     },
 
     render: function () {
-      var that = this;
-      Adapter.findByCode(this.code).done(function(results) {
-        that.$el.html(template({
-          results: results
-        }));
-      });
+      var results = this.troubleCodes.findByCode(this.code);
+      this.$el.html(template({
+        results: results
+      }));
       return this;
     }
 
