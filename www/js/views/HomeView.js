@@ -14,7 +14,6 @@ define(
 
     initialize: function () {
         this.currentHint = "Enter the Diagnostic Trouble Code to filter the results.";
-        this.code = ["","","","",""];
         this.render();
     },
 
@@ -22,8 +21,6 @@ define(
         this.$el.html(template());
         this.searchView = new SearchView({ el: "#search-view" });
         this.resultsView = new ResultsView({ el: "#results-view", code: this.code });
-        this.searchView.render();
-        this.resultsView.render();
         return this;
     },
 
@@ -36,9 +33,14 @@ define(
       this.initialize();
     },
 
-    search: function() {
-      this.code = getCompleteCode();
-      this.resultsView = new ResultsView({ el: "#results-view", code: this.code });
+    search: function(event) {
+      var code = getCompleteCode(), $next = $(event.target).next("input");
+      if ( event.keyCode < 45 || event.keyCode > 91 ) return;
+      this.resultsView.render(code);
+      if ($next.length) {
+        console.log($next);
+        $next.focus();
+      }
     }
 
 

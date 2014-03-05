@@ -26,12 +26,20 @@ define(
         this.render();
     },
 
+    events: {
+      "focus .code-char": "onFocus"
+    },
+
+    onFocus: function(event) {
+      var $this = $(event.target), $next = $this.next(".code-char");
+      $this.val("");
+    },
+
     render: function () {
         this.$el.html(template({
           currentHint: this.currentHint,
           inputs: this.inputs
         }));
-        this.$el.find(".code-char:first").focus();
         return this;
     }
 

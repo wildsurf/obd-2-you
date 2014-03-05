@@ -11,7 +11,5 @@ require.config({
 
 // Start the main app logic.
 require(["jquery","backbone", "views/HomeView"], function($, Backbone, HomeView) {
-
   var homeView = new HomeView({el: "#app"});
-  homeView.render();
 });

@@ -8,17 +8,18 @@ define(
 
   return Backbone.View.extend({
 
-    initialize: function (options) {
+    initialize: function () {
       var that = this;
-      this.code = options.code;
+      this.code = ["","","","",""];
       this.troubleCodes = new TroubleCodeCollection();
       this.troubleCodes.fetch({dataType: "jsonp", success: function() {
         that.render();
       }});
     },
 
-    render: function () {
-      var results = this.troubleCodes.findByCode(this.code);
+    render: function (newCode) {
+      var code = newCode || this.code,
+        results = this.troubleCodes.findByCode(code);
       this.$el.html(template({
         results: results
       }));
